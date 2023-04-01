@@ -5,7 +5,7 @@
 #include "functionalUnitTypesEnum.cpp"
 
 void Scoreboard::createFunctionalUnits (int amount, FunctionalUnitTypes type) {
-  for (size_t i = 0; i < amount; i++) {
+  for (int i = 0; i < amount; i++) {
     FunctionalUnit* fu = new FunctionalUnit(type);
     functionalUnits.push_back(fu);
   }
