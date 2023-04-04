@@ -12,6 +12,7 @@ class Scoreboard {
     std::vector<bool> registerAllocationVector;
     std::vector<std::vector<std::string>> instructionRecord;
     std::vector<FunctionalUnit*> functionalUnits;
+    int clock;
 
   public:
     void createFunctionalUnits(int amount, FunctionalUnitTypes type);
