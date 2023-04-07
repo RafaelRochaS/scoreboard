@@ -1,8 +1,5 @@
-#ifndef AUTHORIZATION_ENUM
-#define AUTHORIZATION_ENUM
-
-#include <map>
-#include <string>
+#ifndef FUNCTIONALUNITTYPE_ENUM
+#define FUNCTIONALUNITTYPE_ENUM
 
 enum FunctionalUnitTypes {
   INT,
