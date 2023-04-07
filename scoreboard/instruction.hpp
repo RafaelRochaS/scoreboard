@@ -5,6 +5,7 @@
 
 #include "instructionStateEnum.hpp"
 #include "instructionOpcodeEnum.hpp"
+#include "functionalUnitTypesEnum.hpp"
 
 class Instruction {
   public:
@@ -13,6 +14,7 @@ class Instruction {
     std::string mFirstOperand;
     std::string mSecondOperand;
     std::string mThirdOperand;
+    FunctionalUnitTypes functionalUnit;
 
     int cycleIssued;
     int cycleRead;

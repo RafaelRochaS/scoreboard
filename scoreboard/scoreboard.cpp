@@ -6,10 +6,10 @@
 #include "functionalUnitTypesEnum.hpp"
 
 std::map<FunctionalUnitTypes, std::string> fuNames{
-    {INT, "Integer"},
-    {F_ADD, "Float Add"},
-    {F_MULTIPLY, "Float Multiply"},
-    {F_DIVISION, "Float Division"}};
+    {FunctionalUnitTypes::INT, "Integer"},
+    {FunctionalUnitTypes::F_ADD, "Float Add"},
+    {FunctionalUnitTypes::F_MULTIPLY, "Float Multiply"},
+    {FunctionalUnitTypes::F_DIVISION, "Float Division"}};
 
 std::string printBool (bool value) {
   return value ? "true" : "false";

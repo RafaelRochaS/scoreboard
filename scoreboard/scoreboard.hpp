@@ -8,17 +8,7 @@
 #include "functionalUnitTypesEnum.hpp"
 #include "functionalUnit.hpp"
 #include "instruction.hpp"
-
-enum RegisterType {
-  FLOAT,
-  INT
-};
-
-struct Register {
-  RegisterType type;
-  int registerNumber;
-  FunctionalUnitTypes currentFunctionalUnit;
-};
+#include "register.hpp"
 
 class Scoreboard {
   private:
