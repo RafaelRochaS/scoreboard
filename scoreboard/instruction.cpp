@@ -1,8 +1,8 @@
 #include <string>
 
 #include "instruction.hpp"
-#include "instructionStateEnum.cpp"
-#include "instructionOpcodeEnum.cpp"
+#include "instructionStateEnum.hpp"
+#include "instructionOpcodeEnum.hpp"
 
 Instruction::Instruction(
     InstructionOpcode code,

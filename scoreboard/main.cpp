@@ -4,7 +4,7 @@
 
 #include "consts.cpp"
 #include "scoreboard.hpp"
-#include "functionalUnitTypesEnum.cpp"
+#include "functionalUnitTypesEnum.hpp"
 
 struct DefaultFunctionalUnit {
   int amount;

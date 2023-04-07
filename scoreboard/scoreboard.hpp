@@ -3,14 +3,27 @@
 
 #include <vector>
 #include <string>
+#include <map>
 
-#include "functionalUnitTypesEnum.cpp"
+#include "functionalUnitTypesEnum.hpp"
 #include "functionalUnit.hpp"
+#include "instruction.hpp"
+
+enum RegisterType {
+  FLOAT,
+  INT
+};
+
+struct Register {
+  RegisterType type;
+  int registerNumber;
+  FunctionalUnitTypes currentFunctionalUnit;
+};
 
 class Scoreboard {
   private:
-    std::vector<bool> registerAllocationVector;
-    std::vector<std::vector<std::string>> instructionRecord;
+    std::vector<Register> registerAllocationVector;
+    std::vector<Instruction> instructionRecord;
     std::vector<FunctionalUnit*> functionalUnits;
     int clock;
 

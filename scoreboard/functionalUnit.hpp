@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "functionalUnitTypesEnum.cpp"
+#include "functionalUnitTypesEnum.hpp"
 
 class FunctionalUnit {
   public:

@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "instructionStateEnum.cpp"
-#include "instructionOpcodeEnum.cpp"
+#include "instructionStateEnum.hpp"
+#include "instructionOpcodeEnum.hpp"
 
 class Instruction {
   public:

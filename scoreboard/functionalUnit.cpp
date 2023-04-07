@@ -1,5 +1,5 @@
 #include "functionalUnit.hpp"
-#include "functionalUnitTypesEnum.cpp"
+#include "functionalUnitTypesEnum.hpp"
 
 FunctionalUnit::FunctionalUnit (FunctionalUnitTypes fuType) {
   type = fuType;

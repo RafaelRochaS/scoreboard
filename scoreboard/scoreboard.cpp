@@ -1,8 +1,9 @@
 #include <iostream>
+#include <map>
 
 #include "scoreboard.hpp"
 #include "functionalUnit.hpp"
-#include "functionalUnitTypesEnum.cpp"
+#include "functionalUnitTypesEnum.hpp"
 
 std::map<FunctionalUnitTypes, std::string> fuNames{
     {INT, "Integer"},
