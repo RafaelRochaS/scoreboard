@@ -6,14 +6,30 @@
 #include "instructionStateEnum.hpp"
 #include "instructionOpcodeEnum.hpp"
 #include "functionalUnitTypesEnum.hpp"
+#include "register.hpp"
+
+typedef union Operand {
+  std::string immediate;
+  Register reg;
+
+  Operand &operator=(const Operand &other) {
+    immediate = other.immediate;
+    reg = other.reg;
+
+    return *this;
+  }
+
+  Operand() {};
+  ~Operand() {};
+};
 
 class Instruction {
   public:
     InstructionState currentState;
     InstructionOpcode opcode;
-    std::string mFirstOperand;
-    std::string mSecondOperand;
-    std::string mThirdOperand;
+    Register* mDestination;
+    Operand* mFirstOperand;
+    Operand* mSecondOperand;
     FunctionalUnitTypes functionalUnit;
 
     int cycleIssued;
@@ -22,8 +38,11 @@ class Instruction {
     int cycleFinishedExecution;
     int cycleWroteBack;
 
-    Instruction(InstructionOpcode, std::string, std::string, std::string);
+    Instruction(InstructionOpcode, Register*, Operand*, Operand*);
+    Instruction(InstructionOpcode, Register*, Operand*);
     void updateInstruction(InstructionState);
 };
+
+FunctionalUnitTypes getFunctionUnitTypeForInstruction(InstructionOpcode);
 
 #endif

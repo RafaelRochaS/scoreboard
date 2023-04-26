@@ -13,13 +13,15 @@
 class Scoreboard {
   private:
     std::vector<Register> registerAllocationVector;
-    std::vector<Instruction> instructionRecord;
+    std::vector<Instruction*> instructionRecord;
     std::vector<FunctionalUnit*> functionalUnits;
     int clock;
 
   public:
-    void createFunctionalUnits(int amount, FunctionalUnitTypes type);
+    void createFunctionalUnits(int, FunctionalUnitTypes, int);
     void printFunctionalUnits();
+    void setInstructionRecord(std::vector<Instruction*>);
+    std::vector<Instruction*> getInstructionRecord();
 };
 
 #endif

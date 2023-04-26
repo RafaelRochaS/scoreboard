@@ -5,17 +5,33 @@
 #include "instructionStateEnum.hpp"
 #include "instructionOpcodeEnum.hpp"
 #include "functionalUnitTypesEnum.hpp"
+#include "register.hpp"
 
 Instruction::Instruction(
     InstructionOpcode code,
-    std::string firstOperand,
-    std::string secondOperand = "",
-    std::string thirdOperand = "") {
+    Register* destination,
+    Operand* firstOperand,
+    Operand* SecondOperand) {
 
   opcode = code;
+  mDestination = destination;
   mFirstOperand = firstOperand;
-  mSecondOperand = secondOperand;
-  mThirdOperand = thirdOperand;
+  mSecondOperand = SecondOperand;
+
+  currentState = InstructionState::IF;
+  functionalUnit = getFunctionUnitTypeForInstruction(code);
+};
+
+Instruction::Instruction(
+    InstructionOpcode code,
+    Register* destination,
+    Operand* firstOperand)
+{
+
+  opcode = code;
+  mDestination = destination;
+  mFirstOperand = firstOperand;
+  mSecondOperand = nullptr;
 
   currentState = InstructionState::IF;
   functionalUnit = getFunctionUnitTypeForInstruction(code);
@@ -46,4 +62,4 @@ FunctionalUnitTypes getFunctionUnitTypeForInstruction(InstructionOpcode code) {
     throw "No functional type known for given opcode" + code;
     break;
   }
-}
+};

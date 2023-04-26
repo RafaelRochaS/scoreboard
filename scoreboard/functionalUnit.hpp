@@ -17,8 +17,9 @@ class FunctionalUnit {
     std::string producingUnit2;
     bool isFirstOperandReady;
     bool isSecondOperandReady;
+    int mCyclesToComplete;
 
-    FunctionalUnit(FunctionalUnitTypes type);
+    FunctionalUnit(FunctionalUnitTypes, int);
 };
 
 #endif

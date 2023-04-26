@@ -1,5 +1,7 @@
 #include <iostream>
 #include <map>
+#include <cassert>
+#include <vector>
 
 #include "scoreboard.hpp"
 #include "functionalUnit.hpp"
@@ -15,9 +17,9 @@ std::string printBool (bool value) {
   return value ? "true" : "false";
 }
 
-void Scoreboard::createFunctionalUnits (int amount, FunctionalUnitTypes type) {
+void Scoreboard::createFunctionalUnits (int amount, FunctionalUnitTypes type, int cyclesToComplete) {
   for (int i = 0; i < amount; i++) {
-    FunctionalUnit* fu = new FunctionalUnit(type);
+    FunctionalUnit* fu = new FunctionalUnit(type, cyclesToComplete);
     functionalUnits.push_back(fu);
   }
 }
@@ -34,4 +36,13 @@ void Scoreboard::printFunctionalUnits () {
     std::cout << "\tQk: " << functionalUnits[i]->producingUnit2 << "\tRj: " << printBool(functionalUnits[i]->isFirstOperandReady);
     std::cout << "\tRk: " << printBool(functionalUnits[i]->isSecondOperandReady) << std::endl;
   }
+}
+
+void Scoreboard::setInstructionRecord (std::vector<Instruction> instructions) {
+  assert(instructionRecord.size() > 0);
+  instructionRecord = instructions;
+}
+
+std::vector<Instruction> Scoreboard::getInstructionRecord () {
+  return instructionRecord;
 }

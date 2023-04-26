@@ -5,7 +5,8 @@ enum FunctionalUnitTypes {
   INT,
   F_ADD,
   F_MULTIPLY,
-  F_DIVISION
+  F_DIVISION,
+  UNKNOWN
 };
 
 #endif

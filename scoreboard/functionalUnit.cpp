@@ -1,7 +1,7 @@
 #include "functionalUnit.hpp"
 #include "functionalUnitTypesEnum.hpp"
 
-FunctionalUnit::FunctionalUnit (FunctionalUnitTypes fuType) {
+FunctionalUnit::FunctionalUnit (FunctionalUnitTypes fuType, int cyclesToComplete) {
   type = fuType;
   isBusy = false;
   operation = "-";
@@ -12,4 +12,5 @@ FunctionalUnit::FunctionalUnit (FunctionalUnitTypes fuType) {
   producingUnit2 = "-";
   isFirstOperandReady = false;
   isSecondOperandReady = false;
+  mCyclesToComplete = cyclesToComplete;
 }
